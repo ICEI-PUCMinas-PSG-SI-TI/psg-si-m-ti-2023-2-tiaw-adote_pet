@@ -1,17 +1,26 @@
 # Nome do projeto
-Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
+
+Adote um Pet.
+
+O objetivo principal deste projeto é criar um site que permita e facilite a adoção de animais e forneça ferramentas que permitam aos usuários promover e implementar o PET.
+Os objetivos específicos incluem:
+* Fornecer funcionalidade que permite a interação entre os usuários. B. Um campo onde informações podem ser trocadas antes da implementação efetiva.
+* Fácil comunicação e interação entre os usuários, funciona como uma espécie de mercado online.
+
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Daniela da Silva Lopes
+* Gustavo Henrique Silva de Oliveira
+* Higor Mata Vieira
+* João José Cardoso Ribeiro
+* João Paulo Freitas Silva
+* Luis Gustavo de Moura Cena
+* Renê Guimarães Ferreira Neto
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Pedro Felipe Alves de Oliveira
 
 ## Instruções de utilização
 
