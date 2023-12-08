@@ -1,0 +1,223 @@
+html{
+    background-color: #ece3df;
+}
+
+
+body{
+    background-color:  #ece3df ;
+}
+
+nav {
+    background-color: rgb(171, 130, 98);
+    max-height: 100;
+    color: rgb(254, 249, 234);
+}
+
+main {
+    margin-top: 40px;
+    margin-left: 230px; /* Adicione um espaçamento externo de 20px */
+    text-align: justify;
+    padding-left: 10px; /* Adicione um espaçamento interno à esquerda */
+}
+
+#perfil {
+    width: 30px;
+    height: 30px; 
+    border-radius: 50%; 
+    margin-right: 10px;
+}
+
+
+.context-dark, .bg-gray-dark, .bg-primary {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+    color: #ffffff;
+}
+.nav-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-list li a:hover:before {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-classic {
+    background: #7f7182;
+    padding: 20px; /* Reduz a altura do footer ajustando o padding */
+}
+
+.brand-logo-light {
+    width: 100px; /* Reduz o tamanho do logotipo */
+}
+
+.pt-4 {
+    margin-top: 10px; /* Ajusta o espaçamento superior do texto */
+}
+
+.rights {
+    font-size: 12px; /* Reduz o tamanho da fonte do texto de direitos autorais */
+}
+.retangulo {
+    width: 100%;
+    height: 100px;
+    background: rgb(171, 130, 98); /* Cores de fundo escura e clara */
+    border-radius: 10px ;
+    text-align: center;
+    color: #000; /* Cor do texto no retângulo (preto) */
+    font-size: 25px; /* Tamanho do texto no retângulo */
+}
+.texto-claro {
+    background-color: #7f7182; /* Cor de fundo mais clara */
+    color: #000; /* Cor do texto no retângulo (preto) */
+    font-size: 25px; /* Tamanho do texto no retângulo */
+}
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#team {
+    background: #eee !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #000 !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #7f7182 !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.custom-textarea {
+    background-color: rgb(171, 130, 98); /* Cor de fundo da caixa de perguntas */
+    border: 1px solid #ccc; /* Borda da caixa de perguntas (opcional) */
+}
+
+.custom-button {
+    background-color: rgb(171, 130, 98); /* Cor de fundo do botão */
+    color: white !important; /* Cor do texto do botão */
+}
+.card-header{
+    font-size: 25px;
+}
