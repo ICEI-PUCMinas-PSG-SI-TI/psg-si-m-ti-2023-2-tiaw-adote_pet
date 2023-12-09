@@ -351,10 +351,6 @@ function marcar_doado(id) {
     
 }
 
-// ----------------- PARTE DANI -------------------    
-
-
-
 // Código LoginApp utilizado como exemplo para alunos de primeiro período 
 const LOGIN_URL = "../../index.html";
 
@@ -401,8 +397,6 @@ function addPet(nomePet, fotosPetInput, racaPet, aniversarioPet, generoPet, vaci
     // Salva o novo banco de dados com o novo usuário no localStorage
     localStorage.setItem('db_usuarios', JSON.stringify(db_usuarios));
 }
-
-// ----------------- PARTE LUIS -------------------
 
 function cadastro_user(event){
     event.preventDefault();
@@ -778,7 +772,7 @@ function cadastrar_pet(event) {
                 .then(data => {
                     console.log('Dados enviados com sucesso:', data);
                     alert("Pet cadastrado com sucesso!");
-                    window.location.href = '../../index.html';
+                    window.location.href = '../index.html';
                 })
                 .catch(error => {
                     console.error('Erro ao enviar dados:', error);
@@ -849,3 +843,44 @@ function sair_login(event){
             });  
 }
 
+function atendimento_vet(){
+
+    
+    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/login/0"
+    
+    const msg = document.querySelector("#mensagem_atendimento");
+
+    fetch(url)
+    .then(response => response.json())
+    .then(login => {
+        
+        const userId = login.user_id;
+                        
+        if(userId != -1){
+
+            const atendimento = {
+                "status": "0",
+                "mensagem": msg.value,
+                "userId": userId
+            }
+
+            const url2 = "https://jsonserveradotepet--jjcribeiro.repl.co/atendimento"
+            fetch(url2, {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(atendimento),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Dados enviados com sucesso:', data);
+                alert("Atendimento solicitado com sucesso! Aguarde o contato de um dos nosss médicos veterinários voluntários.");
+                window.location.href = 'parceiros.html';
+            })
+            .catch(error => {
+                console.error('Erro ao enviar dados:', error);
+            });     
+        }
+    });   
+} 
