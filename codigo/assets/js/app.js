@@ -402,15 +402,6 @@ function addPet(nomePet, fotosPetInput, racaPet, aniversarioPet, generoPet, vaci
     localStorage.setItem('db_usuarios', JSON.stringify(db_usuarios));
 }
 
-function setUserPass() {
-    // Implemente conforme necessário
-}
-
-// Inicializa as estruturas utilizadas pelo LoginApp
-function initLoginApp() {
-    // Implemente conforme necessário
-}
-
 // ----------------- PARTE LUIS -------------------
 
 function cadastro_user(event){
@@ -650,7 +641,8 @@ function login2 (event){
                     .then(response => response.json())
                     .then(data => {
                         console.log('Dados enviados com sucesso:', data);
-                        window.location.href = '../../index.html';
+                        
+                        window.location.href = 'adote.html';
                     })
                     .catch(error => {
                         console.error('Erro ao enviar dados:', error);
@@ -849,7 +841,7 @@ function sair_login(event){
         }),
         
     }).then(data => {
-                window.location.href = '../../index.html';
+                window.location.href = '../index.html';
                 console.log('Dados enviados com sucesso:', data);
             })
             .catch(error => {

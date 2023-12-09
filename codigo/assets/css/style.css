@@ -31,13 +31,6 @@ nav {
     color: rgb(254, 249, 234);
 }
 
-/* Estilização básica do navbar */
-nav {
-    background-color: rgb(171, 130, 98);; /* Cor de fundo do navbar */
-    max-height: 100;
-    color: rgb(254, 249, 234); /* Cor do texto dos links */
-}
-
 #filtro {
     max-height: 100px;  
     padding: auto auto;

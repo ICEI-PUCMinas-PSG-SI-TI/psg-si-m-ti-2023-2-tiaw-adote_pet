@@ -2,15 +2,38 @@ html{
     background-color: #ece3df;
 }
 
+.dropdown {
+    position: absolute;
+    display: none;
+    background-color: rgb(171, 130, 98);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    z-index: 1;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px;
+    display: block;
+    color: #495057;
+    text-decoration: none;
+}
 
 body{
-    background-color:  #ece3df ;
+    background-color: #ece3df ;
 }
 
 nav {
     background-color: rgb(171, 130, 98);
     max-height: 100;
     color: rgb(254, 249, 234);
+}
+
+#filtro {
+    max-height: 100px;  
+    padding: auto auto;
 }
 
 main {
