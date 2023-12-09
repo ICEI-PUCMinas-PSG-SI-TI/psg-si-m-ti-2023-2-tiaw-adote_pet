@@ -1,9 +1,12 @@
 // ----------------- PARTE PARTE JOAO JOSE -------------------
 
+const servidor = "http://localhost:3000" 
+// const servidor = "https://jsonserveradotepet--jjcribeiro.repl. co"
+
 function exibePets() {
     let str = ''
 
-    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/pets"
+    const url = servidor+"/pets"
 
     fetch(url)
         .then(response => response.json())
@@ -16,16 +19,16 @@ function exibePets() {
                 if(!pet.doado){
 
                     str += `<div class="col-xl-3 col-lg-4 col-md-6 border border-0">
-                    <a class="card mb-4  bg-opacity-10" href="pet.html?id=${pet.id}">
-                    <img class="card-img-top" src = ${pet.foto[12]} alt = ${pet.foto}/p.png   >
-                    <div class="card-body border border-0")>
-                    <h4 class="card-title">${pet.nome}</h4>
-                    <p>Raça: ${pet.raca}</p>
-                    <p>Sexo: ${pet.genero}</p>
-                    <p>Data de nascimento: ${pet.data}</p>
-                    
-                    </div>
-                    </a>
+                        <a class="card mb-4  bg-opacity-10" href="pet.html?id=${pet.id}">
+                            <img class="card-img-top" src = ${pet.foto[12]} alt = ${pet.foto}/p.png   >
+                            <div class="card-body border border-0")>
+                                <h4 class="card-title">${pet.nome}</h4>
+                                <p>Raça: ${pet.raca}</p>
+                                <p>Sexo: ${pet.genero}</p>
+                                <p>Data de nascimento: ${pet.data}</p>
+                            
+                            </div>
+                        </a>
                     </div>
                     `
                     document.querySelector('#pets-container').innerHTML=str
@@ -37,7 +40,7 @@ function exibePets() {
 
 function exibeUnPet(id) {
     
-    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/pets"
+    const url = servidor+"/pets"
 
     fetch(url)
         .then(response => response.json())
@@ -118,14 +121,14 @@ function exibeMeusPets() {
     let str = ' '
 
 
-    const url2 = "https://jsonserveradotepet--jjcribeiro.repl.co/login/0"
+    const url2 = servidor+"/login/0"
     fetch(url2)
     .then(response => response.json())
     .then(login => {
         
         const user = login.user_id;
         
-        const url = "https://jsonserveradotepet--jjcribeiro.repl.co/pets"
+        const url = servidor+"/pets"
 
         fetch(url)
             .then(response => response.json())
@@ -164,7 +167,7 @@ function exibeMeusPets() {
 
 function exibeMeuPet(id) {
     
-    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/pets"
+    const url = servidor+"/pets"
 
     fetch(url)
         .then(response => response.json())
@@ -199,7 +202,7 @@ function exibeMeuPet(id) {
             `    
             document.querySelector('#main').innerHTML=str
             
-            const url = "https://jsonserveradotepet--jjcribeiro.repl.co/user"
+            const url = servidor+"/user"
 
             let str2='';
             
@@ -256,7 +259,7 @@ function mostrar_interesse(id) {
     console.log("Interesse em "+id);
     
 
-    const url2 = "https://jsonserveradotepet--jjcribeiro.repl.co/login/0"
+    const url2 = servidor+"/login/0"
     fetch(url2)
     .then(response => response.json())
     .then(login => {
@@ -276,7 +279,7 @@ function mostrar_interesse(id) {
             // Supondo que você tem o ID do pet e as informações do interesse
             const petId = 123; // Substitua pelo ID correto do seu pet
             const novoInteresse = [userId, mensagem.value];
-            const url = "https://jsonserveradotepet--jjcribeiro.repl.co/pets/"+id
+            const url = servidor+"/pets/"+id
             // Verifica se já existe algum interesse para esse pet
             fetch(url)
             .then(response => response.json())
@@ -329,7 +332,7 @@ function mostrar_interesse(id) {
 
 function marcar_doado(id) {
     
-    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/pets/"+id
+    const url = servidor+"/pets/"+id
 
     fetch(url, {
         method: 'PATCH',
@@ -352,7 +355,7 @@ function marcar_doado(id) {
 }
 
 // Código LoginApp utilizado como exemplo para alunos de primeiro período 
-const LOGIN_URL = "../../index.html";
+const LOGIN_URL = "../index.html";
 
 // Objeto para o banco de dados de usuários baseado em JSON
 var db_usuarios = { usuarios: [] };
@@ -523,7 +526,7 @@ function cadastro_user(event){
     if (invalido == 0){
 
         console.log(JSON.stringify(usuario));
-        const url = "https://jsonserveradotepet--jjcribeiro.repl.co/user"
+        const url = servidor+"/user"
         fetch(url, {
             method: 'POST',
             headers: {
@@ -571,7 +574,7 @@ function validatePassword(password,minDigits){
 function validatecpf(cpf,maxDigits){
     if(cpf.length>=maxDigits){
         //cpf válido
-        const url = "https://jsonserveradotepet--jjcribeiro.repl.co/user"
+        const url = servidor+"/user"
         fetch(url)
         .then(response => response.json())
         .then(users => {          
@@ -603,7 +606,7 @@ function validatedata(data,maxDigits){
 
 function login2 (event){
     event.preventDefault();
-    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/user"
+    const url = servidor+"/user"
     // Obtenha os valores do formulário
     const email = document.getElementById('email-box').value;
     const senha = document.getElementById('senha-box').value;
@@ -622,7 +625,7 @@ function login2 (event){
                 if(senha===user.Senha){
                     console.log(user.id);
                     
-                    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/login/0"
+                    const url = servidor+"/login/0"
                     fetch(url, {
                         method: 'PATCH',
                         headers: {
@@ -696,7 +699,7 @@ function cadastrar_pet(event) {
 
     
 
-    const url2 = "https://jsonserveradotepet--jjcribeiro.repl.co/login/0"
+    const url2 = servidor+"/login/0"
     fetch(url2)
     .then(response => response.json())
     .then(login => {
@@ -760,7 +763,7 @@ function cadastrar_pet(event) {
         
             
                 console.log(JSON.stringify(pet));
-                const url = "https://jsonserveradotepet--jjcribeiro.repl.co/pets"
+                const url = servidor+"/pets"
                 fetch(url, {
                     method: 'POST',
                     headers: {
@@ -793,7 +796,7 @@ function cadastrar_pet(event) {
 function nome_login(){
 
         
-    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/login/0"
+    const url = servidor+"/login/0"
     
     fetch(url)
     .then(response => response.json())
@@ -803,7 +806,7 @@ function nome_login(){
                         
         if(userId != -1){
 
-            const url2 = "https://jsonserveradotepet--jjcribeiro.repl.co/user/"
+            const url2 = servidor+"/user/"
             fetch(url2)
             .then(response => response.json())
             .then(users => {
@@ -824,7 +827,7 @@ function sair_login(event){
     event.preventDefault();
     
     //alert("Saindo de sua conta");
-    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/login/0"
+    const url = servidor+"/login/0"
     fetch(url, {
         method: 'PATCH',
         headers: {
@@ -835,7 +838,7 @@ function sair_login(event){
         }),
         
     }).then(data => {
-                window.location.href = '../index.html';
+                window.location.href = 'login.html';
                 console.log('Dados enviados com sucesso:', data);
             })
             .catch(error => {
@@ -846,7 +849,7 @@ function sair_login(event){
 function atendimento_vet(){
 
     
-    const url = "https://jsonserveradotepet--jjcribeiro.repl.co/login/0"
+    const url = servidor+"/login/0"
     
     const msg = document.querySelector("#mensagem_atendimento");
 
@@ -857,14 +860,14 @@ function atendimento_vet(){
         const userId = login.user_id;
                         
         if(userId != -1){
-
+            alert(msg);
             const atendimento = {
                 "status": "0",
                 "mensagem": msg.value,
                 "userId": userId
             }
 
-            const url2 = "https://jsonserveradotepet--jjcribeiro.repl.co/atendimento"
+            const url2 = servidor+"/atendimento"
             fetch(url2, {
                 method: 'POST',
                 headers: {
@@ -884,3 +887,98 @@ function atendimento_vet(){
         }
     });   
 } 
+
+function exibeVet() {
+    let str = ' '
+
+    let qnt =0;
+    const url2 = servidor+"/login/0"
+    fetch(url2)
+    .then(response => response.json())
+    .then(login => {
+        
+        const user = login.user_id;
+        const url = servidor+"/atendimento"
+        fetch(url)
+        .then(response => response.json())
+        .then(atends => {          
+            const url3 = servidor+"/user"
+            
+            for (let i = 0; i < atends.length; i++) {
+                let atend = atends[i];
+                fetch(url3)
+                .then(response => response.json())
+                .then(users => {
+                    let usuario = users.find(item => item.id === atend.userId);
+                    console.log(usuario);
+                
+                    if(atend.status == 0){
+                        qnt=1;
+                        str+=`<div class="col-xl-6 col-lg-6 col-md-12 border border-0">
+                                <a class="card mb-4  bg-opacity-10">
+                                    <div class="card-body border border-0">
+                                        <h4 class="card-title">${usuario.Nome}</h4>
+                                        <p>${atend.mensagem}</p>
+                                        <button type="submit" class="btn btn-primary custom-button mt-3" onclick="atender('${user}','${atend.id}')">Iniciar atendimento</button>
+                                    </div>
+                                </a>
+                            </div>`
+                        document.querySelector('#atendimentos-container').innerHTML=str
+                
+                    }
+                
+                    if(qnt==0 && atends.length==i+1){
+                        str+=`<div class="col-xl-6 col-lg-6 col-md-12 border border-0">
+                                        <a class="card mb-4  bg-opacity-10">
+                                            <div class="card-body border border-0">
+                                                
+                                                <p>Nenhum atendimento, aguarde por mais solicitações.</p>
+                                                </div>
+                                        </a>
+                                    </div>`
+                                document.querySelector('#atendimentos-container').innerHTML=str
+                    }
+
+                });
+                
+            }
+            
+            
+        });
+    });
+} 
+
+function atender(vetId, atendId){
+    
+    const url = servidor+"/atendimento/"+atendId
+    
+    // fetch(url)
+    //     .then(response => response.json())
+    //     .then(atends => {
+    //         let atendimento = atends.find(item => item.id === atendId);
+    //         console.log(atendimento);
+        
+    //     });
+
+    // const url2 = servidor+"/atendimento"+atendimento.id
+
+    fetch(url, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            vetId: vetId,
+            status: "1"
+        }),
+        
+    }).then(data => {
+                // window.location.href = 'login.html';
+                console.log('Dados enviados com sucesso:', data);
+            })
+            .catch(error => {
+                console.error('Erro ao enviar dados:', error);
+            }); 
+
+
+}
