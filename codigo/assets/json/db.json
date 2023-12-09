@@ -2,7 +2,7 @@
   "login": [
     {
       "id": "0",
-      "user_id": -1
+      "user_id": "7"
     }
   ],
   "pets": [
@@ -404,13 +404,14 @@
       "mensagem": "Meu pet tem isso...",
       "userId": "4",
       "vetId": "7",
-      "motivo": "Tratado com o cliente."
+      "motivo": "Tratei com o cliente"
     },
     {
-      "status": "0",
+      "status": "1",
       "mensagem": "Ola, meu pet esta mancando.",
       "userId": "3",
-      "id": "v_awGjf"
+      "id": "v_awGjf",
+      "vetId": "7"
     },
     {
       "status": "0",

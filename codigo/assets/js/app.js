@@ -826,6 +826,7 @@ function nome_login(){
                     <a class="dropdown-item" href="pages/veterinario.html">Atender</a>
                     <a class="dropdown-item" href="pages/meus_atends.html">Meus Atendimentos</a>
                     </div>`
+                    
                     document.querySelector('#menu_vet').innerHTML=str2
                 }
             
@@ -875,7 +876,7 @@ function atendimento_vet(){
         const userId = login.user_id;
                         
         if(userId != -1){
-            alert(msg);
+            
             const atendimento = {
                 "status": "0",
                 "mensagem": msg.value,
@@ -967,16 +968,6 @@ function atender(vetId, atendId){
     
     const url = servidor+"/atendimento/"+atendId
     
-    // fetch(url)
-    //     .then(response => response.json())
-    //     .then(atends => {
-    //         let atendimento = atends.find(item => item.id === atendId);
-    //         console.log(atendimento);
-        
-    //     });
-
-    // const url2 = servidor+"/atendimento"+atendimento.id
-
     fetch(url, {
         method: 'PATCH',
         headers: {
@@ -989,6 +980,92 @@ function atender(vetId, atendId){
         
     }).then(data => {
                 // window.location.href = 'login.html';
+                console.log('Dados enviados com sucesso:', data);
+            })
+            .catch(error => {
+                console.error('Erro ao enviar dados:', error);
+            }); 
+
+
+}
+
+function exibeAtends() {
+    let str = ' '
+
+    let qnt =0;
+    const url2 = servidor+"/login/0"
+    fetch(url2)
+    .then(response => response.json())
+    .then(login => {
+        
+        const user = login.user_id;
+        const url = servidor+"/atendimento"
+        fetch(url)
+        .then(response => response.json())
+        .then(atends => {          
+            const url3 = servidor+"/user"
+            
+            for (let i = 0; i < atends.length; i++) {
+                let atend = atends[i];
+                fetch(url3)
+                .then(response => response.json())
+                .then(users => {
+                    let usuario = users.find(item => item.id === atend.userId);
+                    console.log(usuario);
+                
+                    if(atend.status == 1 && atend.vetId == user){
+                        qnt=1;
+                        str+=`<div class="col-xl-6 col-lg-6 col-md-12 border border-0">
+                                <a class="card mb-4  bg-opacity-10">
+                                    <div class="card-body border border-0">
+                                        <h4 class="card-title">${usuario.Nome}</h4>
+                                        <p>${atend.mensagem}</p>
+                                        
+                                        <textarea id="motivo_atend" class="form-control custom-textarea" rows="4"></textarea>
+                                        <button type="submit" class="btn btn-primary custom-button mt-3" onclick="final_atender('${user}','${atend.id}')">Finalizar atendimento</button>
+                                    </div>
+                                </a>
+                            </div>`
+                        document.querySelector('#atendimentos-container').innerHTML=str
+                
+                    }
+                
+                    if(qnt==0 && atends.length==i+1){
+                        str+=`<div class="col-xl-6 col-lg-6 col-md-12 border border-0">
+                                        <a class="card mb-4  bg-opacity-10">
+                                            <div class="card-body border border-0">
+                                                
+                                                <p>Nenhum atendimento, aguarde por mais solicitações.</p>
+                                                </div>
+                                        </a>
+                                    </div>`
+                                document.querySelector('#atendimentos-container').innerHTML=str
+                    }
+
+                });
+            }
+        });
+    });
+}
+
+function final_atender(vetId, atendId){
+    
+    const url = servidor+"/atendimento/"+atendId
+    
+    const msg = document.querySelector("#motivo_atend");
+
+    fetch(url, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            motivo: msg.value,
+            status: "2"
+        }),
+        
+    }).then(data => {
+                window.location.href = 'meus_atends.html';
                 console.log('Dados enviados com sucesso:', data);
             })
             .catch(error => {
