@@ -2,7 +2,7 @@
   "login": [
     {
       "id": "0",
-      "user_id": "7"
+      "user_id": -1
     }
   ],
   "pets": [
@@ -393,7 +393,8 @@
       "Cidade": "Belo Horizonte",
       "Bairro": "Centro",
       "Endereço": "Rua Tal, 01",
-      "Descrição": "Sou estudante de medicina veterinária e adoro animais "
+      "Descrição": "Sou estudante de medicina veterinária e adoro animais.",
+      "vet": true
     }
   ],
   "atendimento": [

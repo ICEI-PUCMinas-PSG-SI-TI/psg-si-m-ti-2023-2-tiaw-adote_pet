@@ -817,6 +817,17 @@ function nome_login(){
                 document.querySelector('#nome_login').innerHTML=str
                 document.querySelector('#nome_login').setAttribute('href','../../index.html');
                 document.querySelector('#sair_login').innerHTML=`<a class="navbar-brand ps-3 " href="../../index.html" id="sair" onclick="sair_login(event)">Sair</a>`
+                
+                console.log(user);
+                if(user.vet){
+
+                    let str2=`<a class="nav-link" href="#">Veterinário</a>
+                    <div class="dropdown">
+                    <a class="dropdown-item" href="pages/veterinario.html">Atender</a>
+                    <a class="dropdown-item" href="pages/meus_atends.html">Meus Atendimentos</a>
+                    </div>`
+                    document.querySelector('#menu_vet').innerHTML=str2
+                }
             
             });
         }
@@ -838,7 +849,11 @@ function sair_login(event){
         }),
         
     }).then(data => {
+            try{
                 window.location.href = 'login.html';
+            } catch{
+                window.location.href = '../login.html';
+            }
                 console.log('Dados enviados com sucesso:', data);
             })
             .catch(error => {
