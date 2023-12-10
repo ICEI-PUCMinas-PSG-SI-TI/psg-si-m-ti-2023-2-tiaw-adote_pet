@@ -1,7 +1,7 @@
 // ----------------- PARTE PARTE JOAO JOSE -------------------
 
-const servidor = "http://localhost:3000" 
-// const servidor = "https://jsonserveradotepet--jjcribeiro.repl. co"
+// const servidor = "http://localhost:3000" 
+ const servidor = "https://jsonserveradotepet--jjcribeiro.repl.co"
 
 function exibePets() {
     let str = ''
