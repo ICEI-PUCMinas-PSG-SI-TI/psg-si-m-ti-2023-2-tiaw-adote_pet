@@ -1116,3 +1116,9 @@ function final_atender(vetId, atendId){
 
 
 }
+
+function confirmacao_contatos(event){
+    event.preventDefault();
+    alert("Mensagem enviada com sucesso!");
+    window.location.href='contato.html';
+}
