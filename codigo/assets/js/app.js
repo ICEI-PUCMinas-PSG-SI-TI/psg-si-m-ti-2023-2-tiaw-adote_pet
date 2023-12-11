@@ -1,7 +1,7 @@
 // ----------------- PARTE PARTE JOAO JOSE -------------------
 
 // const servidor = "http://localhost:3000" 
- const servidor = "https://jsonserveradotepet--jjcribeiro.repl.co"
+const servidor = "https://jsonserveradotepet--jjcribeiro.repl.co"
 
 function exibePets() {
     let str = ''
@@ -815,8 +815,50 @@ function nome_login(){
                 
                 str= user.Nome.split(' ')[0]
                 document.querySelector('#nome_login').innerHTML=str
-                document.querySelector('#nome_login').setAttribute('href','../../index.html');
-                document.querySelector('#sair_login').innerHTML=`<a class="navbar-brand ps-3 " href="../../index.html" id="sair" onclick="sair_login(event)">Sair</a>`
+                document.querySelector('#nome_login').setAttribute('href','../index.html');
+                document.querySelector('#sair_login').innerHTML=`<a class="navbar-brand ps-3 " href="../index.html" id="sair" onclick="sair_login(event)">Sair</a>`
+                
+                console.log(user);
+                if(user.vet){
+
+                    let str2=`<a class="nav-link" href="#">Veterinário</a>
+                    <div class="dropdown">
+                    <a class="dropdown-item" href="veterinario.html">Atender</a>
+                    <a class="dropdown-item" href="meus_atends.html">Meus Atendimentos</a>
+                    </div>`
+                    
+                    document.querySelector('#menu_vet').innerHTML=str2
+                }
+            
+            });
+        }
+    });   
+} 
+
+function nome_login_index(){
+
+        
+    const url = servidor+"/login/0"
+    
+    fetch(url)
+    .then(response => response.json())
+    .then(login => {
+        
+        const userId = login.user_id;
+                        
+        if(userId != -1){
+
+            const url2 = servidor+"/user/"
+            fetch(url2)
+            .then(response => response.json())
+            .then(users => {
+                let idx = users.findIndex(elem => elem.id == userId)
+                let user = users[idx];
+                
+                str= user.Nome.split(' ')[0]
+                document.querySelector('#nome_login').innerHTML=str
+                document.querySelector('#nome_login').setAttribute('href','index.html');
+                document.querySelector('#sair_login').innerHTML=`<a class="navbar-brand ps-3 " href="index.html" id="sair" onclick="sair_login(event)">Sair</a>`
                 
                 console.log(user);
                 if(user.vet){
