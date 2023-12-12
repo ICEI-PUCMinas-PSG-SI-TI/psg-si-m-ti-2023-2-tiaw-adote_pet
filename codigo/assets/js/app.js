@@ -130,38 +130,44 @@ function exibeMeusPets() {
         
         const url = servidor+"/pets"
 
-        fetch(url)
-            .then(response => response.json())
-            .then(pets => {          
-                console.log(pets)
-                for (let i = 0; i < pets.length; i++) {
-                    let pet = pets[i];
-                    let msg = "Aguardando doação."
-                    if(pet.doado){
-                        console.log("Doado ----- " + pet.doado)
-                        msg = "Doado."
-                    }
-                    if(user===pet.user_id || user == "-1"){ 
-                        
-                        str += `<div class="col-xl-3 col-lg-4 col-md-6 border border-0">
-                                    <a class="card mb-4  bg-opacity-10" href="meu_pet.html?id=${pet.id}">
-                                        <img class="card-img-top" src = ${pet.foto[12]} alt = ${pet.nome}/p.png   >
-                                        <div class="card-body border border-0")>
-                                            <h4 class="card-title">${pet.nome}</h4>
-                                            <p>Raça: ${pet.raca}</p>
-                                            <p>Sexo: ${pet.genero}</p>
-                                            <p>Data de nascimento: ${pet.data}</p>
-                                            <p>Status: ${msg}</p>
-                                        </div>
-                                    </a>
-                                </div>
-                        `
-                        
-                    }
-                }
-                document.querySelector('#pets-container').innerHTML=str
+        if(user == "-1"){
+            alert("Faça login para visualizar suas doações.");
+            window.location.href="login.html";
+        } else {
 
-        });
+            fetch(url)
+                .then(response => response.json())
+                .then(pets => {          
+                    console.log(pets)
+                    for (let i = 0; i < pets.length; i++) {
+                        let pet = pets[i];
+                        let msg = "Aguardando doação."
+                        if(pet.doado){
+                            console.log("Doado ----- " + pet.doado)
+                            msg = "Doado."
+                        }
+                        if(user===pet.user_id){ 
+                            
+                            str += `<div class="col-xl-3 col-lg-4 col-md-6 border border-0">
+                                        <a class="card mb-4  bg-opacity-10" href="meu_pet.html?id=${pet.id}">
+                                            <img class="card-img-top" src = ${pet.foto[12]} alt = ${pet.nome}/p.png   >
+                                            <div class="card-body border border-0")>
+                                                <h4 class="card-title">${pet.nome}</h4>
+                                                <p>Raça: ${pet.raca}</p>
+                                                <p>Sexo: ${pet.genero}</p>
+                                                <p>Data de nascimento: ${pet.data}</p>
+                                                <p>Status: ${msg}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                            `
+                            
+                        }
+                    }
+                    document.querySelector('#pets-container').innerHTML=str
+
+            });
+        }
     });
 } 
 
