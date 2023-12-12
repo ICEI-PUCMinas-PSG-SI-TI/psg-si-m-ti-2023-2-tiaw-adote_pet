@@ -2,7 +2,7 @@
   "login": [
     {
       "id": "0",
-      "user_id": "7"
+      "user_id": "5"
     }
   ],
   "pets": [
@@ -15,7 +15,7 @@
       "genero": "macho",
       "vacinado": "sim",
       "peso": "5",
-      "descricao": "descricao do animal",
+      "descricao": "Energético, pequeno guardião. Leal e alerta.",
       "foto": [
         "https://i.ibb.co/Vvn5Ky6/1.png",
         "https://i.ibb.co/2jq1Yyd/2.png",
@@ -33,7 +33,7 @@
         "https://i.ibb.co/dj249jr/s.png",
         "https://i.ibb.co/WHY2KjV/c.png"
       ],
-      "doado": false
+      "doado": true
     },
     {
       "id": "1",
@@ -44,7 +44,7 @@
       "genero": "femea",
       "vacinado": "sim",
       "peso": "25",
-      "descricao": "descricao do animal",
+      "descricao": "Inteligente, leal, e amorosa. Protetora nata.",
       "foto": [
         "https://i.ibb.co/KjPczm0/1.png",
         "https://i.ibb.co/9sTVTw1/2.png",
@@ -62,7 +62,17 @@
         "https://i.ibb.co/7Nv16WZ/s.png",
         "https://i.ibb.co/s3dND2L/c.png"
       ],
-      "doado": false
+      "doado": true,
+      "interesse": [
+        [
+          "740a8988-e22e-4a40-a33d-7e30aba11e1f",
+          "Gostaria de adotar a Maia para morar comigo em minha fazenda."
+        ],
+        [
+          "ab25d3e1-5c69-415e-9e84-6834127c0536",
+          "Olá, gostaria de adotar a Maia para ser minha parceira no sitio."
+        ]
+      ]
     },
     {
       "id": "2",
@@ -73,7 +83,7 @@
       "genero": "femea",
       "vacinado": "sim",
       "peso": "20",
-      "descricao": "descricao do animal",
+      "descricao": "Alegre, brincalhona e cheia de vida.",
       "foto": [
         "https://i.ibb.co/3fNGgFY/1.png",
         "https://i.ibb.co/5KqwTxC/2.png",
@@ -96,6 +106,10 @@
         [
           "4",
           "posso adotar a Filo?"
+        ],
+        [
+          "3",
+          "quero adotar a filo"
         ]
       ]
     },
@@ -108,7 +122,7 @@
       "genero": "macho",
       "vacinado": "sim",
       "peso": "30",
-      "descricao": "descricao do animal",
+      "descricao": "Majestoso, leal e inteligente. Amigo fiel.",
       "foto": [
         "https://i.ibb.co/RbydMhj/1.png",
         "https://i.ibb.co/fFhNCgF/2.png",
@@ -126,7 +140,13 @@
         "https://i.ibb.co/Bnv0S2q/s.png",
         "https://i.ibb.co/RH9vhxc/c.png"
       ],
-      "doado": false
+      "doado": false,
+      "interesse": [
+        [
+          "2",
+          "Gostaria que o Thor fosse meu companheiro."
+        ]
+      ]
     },
     {
       "user_id": "2",
@@ -137,7 +157,7 @@
       "genero": "femea",
       "vacinado": "sim",
       "peso": "5",
-      "descricao": "descricao do animal",
+      "descricao": "Fofa, adorável e sempre elegante.",
       "foto": [
         "https://i.ibb.co/Gp6P7d7/1.png",
         "https://i.ibb.co/6XPhHDn/2.png",
@@ -159,14 +179,14 @@
     },
     {
       "id": "5",
-      "user_id": "3",
+      "user_id": "1",
       "nome": "Scott",
       "raca": "Yorkshire",
       "data": "04/10/2019",
       "genero": "macho",
       "vacinado": "sim",
       "peso": "5",
-      "descricao": "descricao do animal",
+      "descricao": "Pequeno, corajoso e cheio de personalidade.",
       "foto": [
         "https://i.ibb.co/PhjfrsJ/1.png",
         "https://i.ibb.co/5L14sxP/2.png",
@@ -184,10 +204,10 @@
         "https://i.ibb.co/30s3SZs/s.png",
         "https://i.ibb.co/HTw2NJ2/c.png"
       ],
-      "doado": true,
+      "doado": false,
       "interesse": [
         [
-          "6",
+          "4",
           "Ola, gostaria de adotar o seu Pet."
         ]
       ]
@@ -201,7 +221,7 @@
       "genero": "femea",
       "vacinado": "sim",
       "peso": "25",
-      "descricao": "descricao do animal",
+      "descricao": "Forte, amorosa e protetora. Doce gigante.",
       "foto": [
         "https://i.ibb.co/mtLdd4z/1.png",
         "https://i.ibb.co/gSQbVqD/2.png",
@@ -230,7 +250,7 @@
       "genero": "femea",
       "vacinado": "sim",
       "peso": "15",
-      "descricao": "descricao do animal",
+      "descricao": "Ágil, inteligente e sempre pronta para aprender.",
       "foto": [
         "https://i.ibb.co/4FX6mVq/1.png",
         "https://i.ibb.co/ZTcxdbY/2.png",
@@ -251,20 +271,20 @@
       "doado": false,
       "interesse": [
         [
-          "7",
+          "3",
           "Olá, preciso de uma companhia e adoraria adotar seu Pet."
         ]
       ]
     },
     {
-      "user_id": "3",
-      "nome": "Pitbull",
-      "raca": "Pitbull",
-      "data": "2023-11-30",
-      "genero": "Fêmea",
-      "vacinado": "Não",
+      "user_id": "ab25d3e1-5c69-415e-9e84-6834127c0536",
+      "nome": "Petit",
+      "raca": "Pinscher",
+      "data": "2010-02-17",
+      "genero": "Macho",
+      "vacinado": "Sim",
       "peso": "1-5kg",
-      "descricao": "Pitbull fofo",
+      "descricao": "Adora fazer acrobacias para ganhar petiscos",
       "foto": [
         "https://i.ibb.co/Vvn5Ky6/1.png",
         "https://i.ibb.co/2jq1Yyd/2.png",
@@ -283,7 +303,7 @@
         "https://i.ibb.co/WHY2KjV/c.png"
       ],
       "doado": false,
-      "id": "znZ_1pr"
+      "id": "URvGJff"
     }
   ],
   "user": [
@@ -292,98 +312,59 @@
       "Nome": "Login"
     },
     {
-      "id": "0",
-      "Nome": "Admin",
-      "Senha": "admin",
-      "CPF": "123.456.789-19",
-      "DD/MM/AA": "01/01/1999",
-      "Email": "admin",
-      "Telefone": "(99) 99999-9999",
-      "Cidade": "BH",
-      "Bairro": "Centro",
-      "Endereço": "Admin",
-      "Descrição": "Admin"
-    },
-    {
       "id": "1",
-      "Nome": "João Silva",
+      "Nome": "Jefferson Almeida",
       "Senha": "senha123",
-      "CPF": "123.456.789-09",
-      "DD/MM/AA": "01/12/1990",
-      "Email": "joao.silva@example.com",
-      "Telefone": "(11) 98765-4321",
-      "Cidade": "São Paulo",
+      "CPF": "123.456.789-01",
+      "DD/MM/AA": "01/12/1997",
+      "Email": "jeferson.almeida@gmail.com",
+      "Telefone": "(31) 98765-4321",
+      "Cidade": "Belo Horizonte",
       "Bairro": "Centro",
       "Endereço": "Rua Tal, 00",
-      "Descrição": "Sou uma pessoa extrovertida que gosta de esportes e música. Moro no centro da cidade, perto de todas as facilidades."
+      "Descrição": "Um jornalista que gosta de estar por dentro das trends, acompanhar o mercado da moda."
     },
     {
       "id": "2",
-      "Nome": "Maria Oliveira",
-      "Senha": "senha456",
-      "CPF": "987.654.321-00",
-      "DD/MM/AA": "15/05/1985",
-      "Email": "maria.oliveira@example.com",
-      "Telefone": "(21) 12345-6789",
-      "Cidade": "Rio de Janeiro",
-      "Bairro": "Copacabana",
-      "Endereço": "Rua XYZ, 123",
-      "Descrição": "Trabalho na área de tecnologia e adoro praia. Moro em um apartamento em Copacabana com uma vista incrível para o mar."
+      "Nome": "Clara Rodrigues",
+      "Senha": "senha123",
+      "CPF": "987.654.321-02",
+      "DD/MM/AA": "15/05/1993",
+      "Email": "clara.rodrigues@gmail.com",
+      "Telefone": "(31) 12345-6789",
+      "Cidade": "Belo Horizonte",
+      "Bairro": "Savassi",
+      "Endereço": "Rua Dois, 123",
+      "Descrição": "Trabalho em um canil e adoro praia."
     },
     {
       "id": "3",
-      "Nome": "Carlos Santos",
-      "Senha": "senha789",
+      "Nome": "Ramiro Silva",
+      "Senha": "senha123",
       "CPF": "456.789.012-34",
-      "DD/MM/AA": "20/08/1982",
-      "Email": "carlos.santos@example.com",
+      "DD/MM/AA": "20/08/1960",
+      "Email": "ramiro.ilva@gmail.com",
       "Telefone": "(31) 87654-3210",
       "Cidade": "Belo Horizonte",
       "Bairro": "Savassi",
       "Endereço": "Av. ABC, 456",
-      "Descrição": "Sou um profissional de marketing digital e amo explorar novos restaurantes na Savassi. Moro em um apartamento moderno na região."
+      "Descrição": "Apaixonado por xadrez."
     },
     {
       "id": "4",
-      "Nome": "Ana Lima",
-      "Senha": "senhaabc",
+      "Nome": "Roberta Torres",
+      "Senha": "senha123",
       "CPF": "234.567.890-12",
-      "DD/MM/AA": "05/03/1995",
-      "Email": "ana.lima@example.com",
-      "Telefone": "(41) 76543-2109",
-      "Cidade": "Curitiba",
-      "Bairro": "Batel",
-      "Endereço": "Rua WXY, 789",
-      "Descrição": "Sou estudante de arquitetura e adoro passear pelo Batel. Moro em um loft com uma vista panorâmica da cidade."
+      "DD/MM/AA": "05/03/1982",
+      "Email": "roberta.orres@gmail.com",
+      "Telefone": "(31) 76543-2109",
+      "Cidade": "Contagem",
+      "Bairro": "Eldorado",
+      "Endereço": "Rua Abobora, 789",
+      "Descrição": "Sou professora e adoro passear pelas praças. Moro em um apartamento com uma vista panorâmica da cidade."
     },
     {
       "id": "5",
-      "Nome": "Ricardo Almeida",
-      "Senha": "senhaxyz",
-      "CPF": "345.678.901-23",
-      "DD/MM/AA": "12/09/1988",
-      "Email": "ricardo.almeida@example.com",
-      "Telefone": "(51) 98765-4321",
-      "Cidade": "Porto Alegre",
-      "Bairro": "Moinhos de Vento",
-      "Endereço": "Av. DEF, 567",
-      "Descrição": "Trabalho como advogado e gosto de frequentar os parques em Moinhos de Vento. Moro em um apartamento próximo à Av. Goethe."
-    },
-    {
-      "id": "6",
-      "Nome": "João José Cardoso Ribeiro",
-      "Senha": "senha123",
-      "CPF": "120.207.166-07",
-      "DD/MM/AA": "22/12/1998",
-      "Email": "joaojosecr@gmail.com",
-      "Telefone": "(31)98215-5008",
-      "Cidade": "BH",
-      "Bairro": "São Gabriel",
-      "Endereço": "Rua Guamaré, 78",
-      "Descrição": "Descrição"
-    },
-    {
-      "id": "7",
       "Nome": "Enzo Garcia",
       "Senha": "veterinario123",
       "CPF": "123.456.782-09",
@@ -395,17 +376,22 @@
       "Endereço": "Rua Tal, 01",
       "Descrição": "Sou estudante de medicina veterinária e adoro animais.",
       "vet": true
+    },
+    {
+      "id": "ab25d3e1-5c69-415e-9e84-6834127c0536",
+      "Nome": "João José ",
+      "Senha": "senha123",
+      "CPF": "123.123.123-12",
+      "DD/MM/AA": "22/12/1998",
+      "Email": "joaojosecr@gmail.com",
+      "Telefone": "31940028922",
+      "Cidade": "Belo Horizonte",
+      "Bairro": "São Gabriel ",
+      "Endereço": "Rua Tal",
+      "Descrição": "Sou estudante de Sistemas de Informação."
     }
   ],
   "atendimento": [
-    {
-      "id": "0",
-      "status": "2",
-      "mensagem": "Meu pet tem isso...",
-      "userId": "4",
-      "vetId": "7",
-      "motivo": "Tratei com o cliente"
-    },
     {
       "status": "1",
       "mensagem": "Ola, meu pet esta mancando.",
@@ -422,8 +408,67 @@
     {
       "status": "0",
       "mensagem": "Ola, boa noite, gostaria de saber se posso dar algum remédio para meu cachorro para poder viajar com ele e ele ir mais tranquilo, pois ele é muito agitado.",
-      "userId": "4",
+      "userId": "1",
       "id": "u7Jq06S"
+    },
+    {
+      "status": "1",
+      "mensagem": "Qual shampoo você indica para evitar pulgas e carrapatos?",
+      "userId": "2",
+      "id": "Txk9ISu",
+      "vetId": "5"
+    },
+    {
+      "id": "1",
+      "status": "0",
+      "mensagem": "Como cuidar dos dentes do meu cachorro?",
+      "userId": "2"
+    },
+    {
+      "id": "2",
+      "status": "2",
+      "mensagem": "Qual a melhor dieta para gatos idosos?",
+      "userId": "1",
+      "vetId": "5",
+      "motivo": ""
+    },
+    {
+      "id": "3",
+      "status": "1",
+      "mensagem": "Dicas para treinar um pássaro de estimação.",
+      "userId": "3",
+      "vetId": "5"
+    },
+    {
+      "id": "4",
+      "status": "0",
+      "mensagem": "Como prevenir pulgas e carrapatos em cães?",
+      "userId": "4"
+    },
+    {
+      "id": "5",
+      "status": "1",
+      "mensagem": "Dicas de socialização para gatos recém-adotados.",
+      "userId": "2",
+      "vetId": "5"
+    },
+    {
+      "id": "6",
+      "status": "0",
+      "mensagem": "Qual a melhor maneira de introduzir um novo animal de estimação em casa?",
+      "userId": "1"
+    },
+    {
+      "id": "7",
+      "status": "0",
+      "mensagem": "Como escolher a ração certa para um cão de porte pequeno?",
+      "userId": "3"
+    },
+    {
+      "status": "0",
+      "mensagem": "Gostaria de indicação para shampoo para prevenir pulgas e carrapatos.",
+      "userId": "2",
+      "id": "zS4X4Qz"
     }
   ]
 }
