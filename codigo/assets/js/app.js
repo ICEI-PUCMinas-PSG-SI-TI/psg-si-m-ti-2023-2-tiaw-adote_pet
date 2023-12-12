@@ -461,95 +461,134 @@ function cadastro_user(event){
     if(nameInput.value===""){
         alert("Por favor, preencha o seu nome");
         invalido = 1;
-    } else if(passwordInput.value===""){
+    } 
+    if(passwordInput.value===""){
         // Verifica se a senha esta vazia
         alert("Por favor, preencha a sua senha");
         invalido = 1;
-    } else if(cpfInput.value===""){
+    } 
+    if(cpfInput.value===""){
         //verifica se o cpf esta vazio
         alert("Por favor, preencha o seu cpf");
         invalido = 1;
-    } else if(dataInput.value===""){
+    } 
+    if(dataInput.value===""){
         //verifica se a data de nascimento esta vazia
         alert("Por favor, preencha sua data de nascimento");
         invalido = 1;
-    } else if(emailInput.value === "" || !isEmailValid(emailInput.value)){
+    } 
+    if(emailInput.value === "" || !isEmailValid(emailInput.value)){
         // verifica se o email esta vazio
         alert("Por favor, preencha o seu e-mail");
         invalido = 1;
-    } else if(telefoneInput.value===""){
+    } 
+    if(telefoneInput.value===""){
         //verifica se o telefone esta vazio
         alert("Por favor, preencha o seu telefone");
         invalido = 1;
-    } else if(cidadeInput.value===""){
+    } 
+    if(cidadeInput.value===""){
         //verifica se a cidade esta vazia
         alert("Por favor, preencha a sua cidade")
         invalido = 1;
-    } else if(bairroInput.value===""){
+    } 
+    if(bairroInput.value===""){
         // verifica se o bairro esta vazio
         alert("Por favor, preencha a seu bairro")
         invalido = 1;
-    } else if(enderecoInput.value===""){
+    } 
+    if(enderecoInput.value===""){
         // verifica se o endereço esta preenchido
         alert("Por favor, preencha a seu endereço")
         invalido = 1;
-    } else if(descricaoInput.value===""){
+    } 
+    if(descricaoInput.value===""){
         // verifica se a descrição esta preenchido
         alert("Por favor, preencha a sua descrição")
         invalido = 1;
-    } else if(!validatePassword(passwordInput.value, 8)){
+    } 
+    if(!validatePassword(passwordInput.value, 8)){
         //verifica se a senha é valida
         alert("A senha precisa de no mínimo 8 digitos")
         invalido = 1;
-    } else if(!validatecpf(cpfInput.value, 11)){
-        // verifica se o cpf é válido
-        alert("O CPF precisa de no minimo 11 números ou CPF ja esta cadastrado")
-        invalido = 1;
-    } else if(!validatedata(dataInput.value, 8)){
+    } 
+    if(!validatedata(dataInput.value, 8)){
         alert("A data precisa de no minimo 8 números")
         invalido = 1;
-    }
+    } 
+    
+    
+    const url_email = servidor+"/user"
+    fetch(url_email)
+    .then(response => response.json())
+    .then(users => {          
+        
+        for (let i = 0; i < users.length; i++) {
+            let user = users[i];
+            console.log(user.Email +" ---- "+ emailInput.value);
+            if(user.Email === emailInput.value){
+                
+                alert("Email já cadastrado, faça login.");
+
+                invalido = 1;
+                window.location.href = "login.html";
+                
+            }
+
+        }
+        
 
     
 
-    // Crie o objeto JSON no formato desejado
-    // Se todos os campos estiverem corretos envie o form
-    const usuario = {
-        "id": id,
-        "Nome": nameInput.value,
-        "Senha": passwordInput.value,
-        "CPF": cpfInput.value,
-        "DD/MM/AA": dataInput.value,
-        "Email": emailInput.value,
-        "Telefone": telefoneInput.value,
-        "Cidade": cidadeInput.value,
-        "Bairro": bairroInput.value,
-        "Endereço": enderecoInput.value,
-        "Descrição": descricaoInput.value
-    };
+        
+
+        // if(!validatecpf(cpfInput.value, 11)){
+        //     // verifica se o cpf é válido
+        //     alert("O CPF precisa de no minimo 11 números ou CPF ja esta cadastrado")
+        //     invalido = 1;
+        // } else
+
+        
+
+        // Crie o objeto JSON no formato desejado
+        // Se todos os campos estiverem corretos envie o form
+        const usuario = {
+            "id": id,
+            "Nome": nameInput.value,
+            "Senha": passwordInput.value,
+            "CPF": cpfInput.value,
+            "DD/MM/AA": dataInput.value,
+            "Email": emailInput.value,
+            "Telefone": telefoneInput.value,
+            "Cidade": cidadeInput.value,
+            "Bairro": bairroInput.value,
+            "Endereço": enderecoInput.value,
+            "Descrição": descricaoInput.value
+        };
 
 
-    if (invalido == 0){
+        if (invalido == 0){
 
-        console.log(JSON.stringify(usuario));
-        const url = servidor+"/user"
-        fetch(url, {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(usuario),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Dados enviados com sucesso:', data);
-        })
-        .catch(error => {
-            console.error('Erro ao enviar dados:', error);
-        });         
+            console.log(JSON.stringify(usuario));
+            const url = servidor+"/user"
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(usuario),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Dados enviados com sucesso:', data);
+                window.location.href = "login.html";
+            })
+            .catch(error => {
+                console.error('Erro ao enviar dados:', error);
+            });         
 
-    }   
-    
+        }   
+    });
 }
 
 //Função que valida e-mail
@@ -576,6 +615,36 @@ function validatePassword(password,minDigits){
     return false;
 }
 
+function validateEmail(email){
+    
+    //cpf válido
+    const url_email = servidor+"/user"
+    fetch(url_email)
+    .then(response => response.json())
+    .then(users => {          
+        
+        for (let i = 0; i < users.length; i++) {
+            let user = users[i];
+            console.log(user.Email +" ---- "+ email);
+            if(user.Email === email){
+                
+                alert(user.Email +" ---- "+ email);
+                return false;
+            }
+
+        }
+        return true;
+
+    })
+    
+        
+    
+    
+}
+
+
+
+
 // função que valida o cpf
 function validatecpf(cpf,maxDigits){
     if(cpf.length>=maxDigits){
@@ -588,7 +657,7 @@ function validatecpf(cpf,maxDigits){
             for (let i = 0; i < users.length; i++) {
                 let user = users[i];
                 if(user.CPF === cpf){
-                    return false
+                    return false;
                 }
 
             }
@@ -597,8 +666,10 @@ function validatecpf(cpf,maxDigits){
         })
         
         
+    } else {
+
+        return true;
     }
-    
 }
 
 // função que valida a data
@@ -617,17 +688,19 @@ function login2 (event){
     const email = document.getElementById('email-box').value;
     const senha = document.getElementById('senha-box').value;
 
-    
+      
     // Construa o objeto de dados a ser enviado para o servidor
     
     fetch(url)
         .then(response => response.json())
         .then(users => {
             console.log(users);
-            let idx = users.findIndex(elem => elem.Email == email)
-            let user = users[idx];
+            let idx = users.findIndex(elem => elem.Email == email);
             
-            if(email === user.Email){
+            
+            let user = users[idx];
+            console.log(email);
+            if(idx != -1){
                 if(senha===user.Senha){
                     console.log(user.id);
                     
@@ -982,6 +1055,7 @@ function exibeVet() {
                                 <a class="card mb-4  bg-opacity-10">
                                     <div class="card-body border border-0">
                                         <h4 class="card-title">${usuario.Nome}</h4>
+                                        <p>Contatos: ${usuario.Telefone} - ${usuario.Email}</p>
                                         <p>${atend.mensagem}</p>
                                         <button type="submit" class="btn btn-primary custom-button mt-3" onclick="atender('${user}','${atend.id}')">Iniciar atendimento</button>
                                     </div>
@@ -1027,8 +1101,8 @@ function atender(vetId, atendId){
         }),
         
     }).then(data => {
-                // window.location.href = 'login.html';
                 console.log('Dados enviados com sucesso:', data);
+                window.location.href = 'veterinario.html';
             })
             .catch(error => {
                 console.error('Erro ao enviar dados:', error);
@@ -1067,6 +1141,7 @@ function exibeAtends() {
                                 <a class="card mb-4  bg-opacity-10">
                                     <div class="card-body border border-0">
                                         <h4 class="card-title">${usuario.Nome}</h4>
+                                        <p>Contatos: ${usuario.Telefone} - ${usuario.Email}</p>
                                         <p>${atend.mensagem}</p>
                                         
                                         <textarea id="motivo_atend" class="form-control custom-textarea" rows="4"></textarea>

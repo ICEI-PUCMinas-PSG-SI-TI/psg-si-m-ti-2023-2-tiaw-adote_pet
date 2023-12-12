@@ -206,11 +206,8 @@ form input[type=submit]{
 }
 
 .container2{
-    
-    margin-top: -249px;
-    margin-left: 750px;
-    max-width: 300px;
-    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .peluda{
     background-color: #828282;
