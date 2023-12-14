@@ -642,9 +642,6 @@ function validateEmail(email){
     
 }
 
-
-
-
 // função que valida o cpf
 function validatecpf(cpf,maxDigits){
     if(cpf.length>=maxDigits){
