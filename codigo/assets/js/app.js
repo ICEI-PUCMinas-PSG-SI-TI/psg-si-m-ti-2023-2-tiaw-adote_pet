@@ -1,17 +1,20 @@
 // ----------------- PARTE PARTE JOAO JOSE -------------------
 
-// const servidor = "http://localhost:3000" 
-const servidor = "https://jsonserveradotepet--jjcribeiro.repl.co"
+const servidor = "http://localhost:3000" 
+//const servidor = "https://jsonserveradotepet--jjcribeiro.repl.co"
+
+//// PARA USAR O SERVIDOR LOCAL COLOQUE url = 'http://localhost:3000'; E COM JSON-SERVER INSTALADO POR npm install json-server, INICIE O SERVIDOR PELO PROMPT json-server --watch db.json
+    
 
 function exibePets() {
     let str = ''
 
     const url = servidor+"/pets"
-
+    
     fetch(url)
         .then(response => response.json())
         .then(pets => {          
-            console.log(pets)
+            //console.log(pets)
             
             for (let i = 0; i < pets.length; i++) {
                 let pet = pets[i];
@@ -642,9 +645,6 @@ function validateEmail(email){
     
 }
 
-
-
-
 // função que valida o cpf
 function validatecpf(cpf,maxDigits){
     if(cpf.length>=maxDigits){
@@ -736,7 +736,6 @@ function login2 (event){
   }
 
 // ----------- ADD PET --------------------
-
 function cadastrar_pet(event) {
     event.preventDefault();
     
